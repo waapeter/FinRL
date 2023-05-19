@@ -296,7 +296,7 @@ class AlpacaProcessor:
     def get_trading_days(self, start, end):
         nyse = tc.get_calendar("NYSE")
         df = nyse.sessions_in_range(
-            pd.Timestamp(start, tz=pytz.UTC), pd.Timestamp(end, tz=pytz.UTC)
+            pd.Timestamp(start), pd.Timestamp(end)
         )
         trading_days = []
         for day in df:
